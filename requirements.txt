@@ -1,0 +1,34 @@
+Requirements
+Packages to be installed:
+
+pip install Flask
+pip install --upgrade google-cloud-vision
+pip install Flask-Uploads
+Need to create service account key on google cloud, which needs to be added to the server in use.
+Need to add the credentials path to bashrc for it to stay permanent after reboot. 
+Video for reference-https://www.youtube.com/watch?v=nMY0qDg16y4
+Python Version Used:Python3.6
+Pickle,re needed as well.
+How to run
+Command:
+python flaskapp.py, should run on 5000 port by default.
+Path: ip:5000/receipt_process
+ip=server ip or localhost
+
+Process:
+Step 1
+Upload an image via file browser.
+Step 2
+Press Submit to obtain a json of found parameters.
+
+Sample Output:
+
+{
+  "Chassis Number": "MEAJC36KFET049870", 
+  "Class Of Vehicle": "MOTOR CYCLE", 
+  "Fuel Used": "PETROL", 
+  "Maker's Name": "Tractors and Farms Equipments Ltd", 
+  "Month & Year": "7/2014", 
+  "Registration No.": "TN39BM3820", 
+  "Seating Capacity": 2
+}

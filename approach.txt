@@ -1,0 +1,43 @@
+Approach
+
+Step 1
+Flask used for uploading image onto server.
+
+Step 2
+Google vision api used for detecting text.
+
+Step 3
+Manufacturing date, registration number, class of vehicle, chassis number, fuel used and Maker's Name intitialized to not found with seating capacity fixed.
+
+Step 4
+
+fuel_list=['PETROL','DIESEL','CNG']
+classes=['MOTOR CYCLE','SCOOTER']
+
+For fuel and vehicle class, above categories were searched in text and displayed accordingly.
+
+Step 5
+
+Fixed pattern in date lead to usage of re.
+month followed by year=pattern
+mfg=re.findall(r'(\d+/20\d\d)',(text))[0]
+
+Step 6
+
+Chassis number incorrectly detected at times by google lead to wrong maker's name as well.
+1st three numbers of chassis number correspond to maker names.
+A table found online was used to poulate a dictionary of chassis number's 1st three words corresponding to maker names.
+Pdf link: http://www.bis.org.in/sf/wmi_master.pdf
+
+Chassis numbers were found to start with MA ranging from MA to ME. This was used in construction of re expression.
+
+Step 7
+
+Registration was found on the basis of the 1st two characters in it indicating the city units. Currently it's based on DL, MH AND TN. Can be improved by updating the list with all city codes.
+
+Step 8
+
+Seating capacity was fixed to 2.
+Type of Body, no of cylinders, bhp and cubic capacity can be extracted as well after understanding their range and by studying structure of chassis number.
+More parameters could probably be extracted if given more time.
+Did not get enough time to cleanup the code, as about two days were spent understanding OCR and relevant Api's, their usage.
